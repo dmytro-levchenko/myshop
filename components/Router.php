@@ -33,13 +33,12 @@ class Router
                 
                 // Получаем внутренний путь из внешнего согласно правилу.
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
-
                 // КОСТЫЛЬ ИЗ-ЗА ЛОКАЛЬНОЙ СРЕДЫ
-                if ($uri != 'myshop' && $uri != 'myshop/cart' && $uri != 'myshop/blog' && $uri != 'myshop/about' && $uri != 'myshop/contacts' && $uri != 'myshop/register') {
+                if ($uri != 'myshop' && $uri != 'myshop/category' && $uri != 'myshop/catalog' && $uri != 'myshop/blog' && $uri != 'myshop/about' && $uri != 'myshop/contacts' && $uri != 'myshop/register') {
                     $internalRoute = substr($internalRoute, 7);
                 }
                 // КОСТЫЛЬ ИЗ-ЗА ЛОКАЛЬНОЙ СРЕДЫ
-                                
+                        
                 // Определить контроллер, action, параметры
                 $segments = explode('/', $internalRoute);
 
@@ -60,8 +59,7 @@ class Router
                 // Создать объект, вызвать метод (т.е. action)
                 $controllerObject = new $controllerName;
 
-                $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
-                
+                $result = call_user_func_array(array($controllerObject, $actionName), $parameters); 
                 
                 if ($result != null) {
                     break;

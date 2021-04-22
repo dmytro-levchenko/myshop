@@ -1,8 +1,6 @@
 <?php
-
 class Blog
 {
-
     /**
      * Returns single blog item with specified id
      * @param integer $id
