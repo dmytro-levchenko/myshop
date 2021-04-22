@@ -19,4 +19,8 @@ return array(
     'index.php' => 'site/index', // actionIndex в SiteController
     //'' => 'site/index', // actionIndex в SiteController
     'myshop' => 'site/index', // actionIndex в SiteController
+
+    // О магазине
+    'contacts' => 'site/contact',
+    'about' => 'site/about',
 );
